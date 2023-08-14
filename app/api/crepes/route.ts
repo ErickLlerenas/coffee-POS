@@ -1,10 +1,9 @@
-import { ProductProps } from "@/components/types/product";
+import { ProductProps } from "@/components/app/types/product";
 
 export async function GET(request: Request) {
   const FRAPPES: ProductProps[] = [
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
@@ -16,14 +15,12 @@ export async function GET(request: Request) {
       ingredients: [],
       name: "Crepa de Oreo",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
@@ -34,7 +31,6 @@ export async function GET(request: Request) {
       ingredients: [],
       name: "Crepa de café",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
@@ -42,130 +38,116 @@ export async function GET(request: Request) {
 
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description:
         "Crepa de Oreo askjdad askd asd sakd ks akdjadhsajkhd idbaskdhasdbsa XD",
-      id: 0,
+      id: 2,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de Oreo",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description: "Crepa de Café",
-      id: 1,
+      id: 3,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de café",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description:
         "Crepa de Oreo askjdad askd asd sakd ks akdjadhsajkhd idbaskdhasdbsa XD",
-      id: 0,
+      id: 4,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de Oreo",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description: "Crepa de Café",
-      id: 1,
+      id: 5,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de café",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description:
         "Crepa de Oreo askjdad askd asd sakd ks akdjadhsajkhd idbaskdhasdbsa XD",
-      id: 0,
+      id: 6,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de Oreo",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description: "Crepa de Café",
-      id: 1,
+      id: 7,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de café",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
       description:
         "Crepa de Oreo askjdad askd asd sakd ks akdjadhsajkhd idbaskdhasdbsa skajbdsjbdk",
-      id: 2,
+      id: 8,
       image:
         "https://lh3.googleusercontent.com/Dzh2acVAo2gQ4Z4r1XS7_u14pAY8btq3zO5p7zS2H4GQx6MbFz2CkWlkXZXYvwhLnZbzNc2lCC20NgHJW1dLRAgp8AxacZLRGHX3=w549",
       ingredients: [],
       name: "Crepa de Fresa",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },

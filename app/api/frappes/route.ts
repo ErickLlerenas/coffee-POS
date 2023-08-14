@@ -1,10 +1,9 @@
-import { ProductProps } from "@/components/types/product";
+import { ProductProps } from "@/components/app/types/product";
 
 export async function GET(request: Request) {
   const FRAPPES: ProductProps[] = [
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
@@ -16,14 +15,12 @@ export async function GET(request: Request) {
       ingredients: [],
       name: "Frappé de Oreo",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
@@ -34,14 +31,12 @@ export async function GET(request: Request) {
       ingredients: [],
       name: "Frappé de café",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },
     },
     {
       cost: {
-        small: 20,
         medium: 25,
         large: 23,
       },
@@ -53,7 +48,6 @@ export async function GET(request: Request) {
       ingredients: [],
       name: "Frappé de Fresa",
       price: {
-        small: 60,
         medium: 65,
         large: 70,
       },

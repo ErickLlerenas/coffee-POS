@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import { ProductProps } from "../types/product";
 import { Button } from "primereact/button";
 import { useCounter } from "primereact/hooks";
 import { SelectButton } from "primereact/selectbutton";
+import ShoppingCartContext from "../context/ShoppingCartContext";
 
 export default function Product({
   description,
   name,
   image,
   price,
+  id,
 }: ProductProps) {
   const { count, increment, decrement } = useCounter(0, {
     min: 0,
@@ -21,21 +23,44 @@ export default function Product({
 
   const [value, setValue] = useState<number>(0);
   const items = [
-    { name: "Ch", value: 1 },
     { name: "Me", value: 2 },
     { name: "Gr", value: 3 },
   ];
 
   const handlePrice = (): number => {
     switch (value) {
-      case 1:
-        return price.small;
       case 2:
         return price.medium;
       case 3:
         return price.large;
       default:
         return 0;
+    }
+  };
+
+  const handleSize = (): string => {
+    switch (value) {
+      case 2:
+        return "Mediano";
+      case 3:
+        return "Grande";
+      default:
+        return "";
+    }
+  };
+
+  const { addProduct } = useContext(ShoppingCartContext);
+
+  const handleAdd = () => {
+    if (addProduct) {
+      addProduct({
+        id,
+        image,
+        name,
+        price: handlePrice(),
+        size: handleSize(),
+        amount: count,
+      });
     }
   };
 
@@ -91,7 +116,11 @@ export default function Product({
           </div>
         </div>
         <div className="flex justify-end">
-          <Button label="Agregar" disabled={!count || !value} />
+          <Button
+            label="Agregar"
+            disabled={!count || !value}
+            onClick={handleAdd}
+          />
         </div>
       </div>
     </div>
