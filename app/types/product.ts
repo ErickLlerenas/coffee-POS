@@ -23,13 +23,11 @@ type Ingredient = {
 };
 
 type Price = {
-	small: number;
 	medium: number;
 	large: number;
 };
 
 type Cost = {
-	small: number;
 	medium: number;
 	large: number;
 };
