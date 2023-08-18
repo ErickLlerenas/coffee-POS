@@ -1,22 +1,20 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
-import { CrepeProps } from "../../types/product";
+import { DrinkProps } from "../../types/product";
 import { Button } from "primereact/button";
 import { useCounter } from "primereact/hooks";
-import ShoppingCartContext from "../../context/ShoppingCartContext";
 import { SelectButton } from "primereact/selectbutton";
+import ShoppingCartContext from "../../context/ShoppingCartContext";
 
-const Crepe = ({ description, name, image, price, id }: CrepeProps) => {
-	const [selections, setSelections] = useState<number[]>([]);
-	const [finalPrice, setFinalPrice] = useState<number>(price);
+const Drinks = ({ description, name, image, price, id }: DrinkProps) => {
+	const [value, setValue] = useState<number[]>([]);
 
 	const items = [
-		{ name: "Topping", value: 1 },
-		{ name: "Nieve", value: 2 },
+		{ name: "Deslac", value: 1 },
+		{ name: "Bombon", value: 2 },
 	];
-
 	const { count, increment, decrement } = useCounter(0, {
 		min: 0,
 		max: 99,
@@ -31,30 +29,24 @@ const Crepe = ({ description, name, image, price, id }: CrepeProps) => {
 				id,
 				image,
 				name,
-				price: finalPrice,
+				price,
 				amount: count,
 			});
 		}
 	};
 
-	useEffect(() => {
-		if (selections.length > 1) {
-			setFinalPrice(() => price + 15);
-			return;
-		}
+	const handlePrice = (): number => {
+		if (value.length > 1) return price + 10;
 
-		switch (selections[0]) {
+		switch (value[0]) {
 			case 1:
-				setFinalPrice(() => price + 5);
-				break;
+				return price + 5;
 			case 2:
-				setFinalPrice(() => price + 10);
-				break;
+				return price + 5;
 			default:
-				setFinalPrice(() => price);
-				break;
+				return price;
 		}
-	}, [price, selections]);
+	};
 
 	return (
 		<div className="flex flex-row rounded-xl bg-white p-3 gap-4">
@@ -89,12 +81,12 @@ const Crepe = ({ description, name, image, price, id }: CrepeProps) => {
 				<div className="flex flex-col justify-between h-44">
 					<div>
 						<div className="flex flex-row justify-between my-4">
-							<span className="text-gray-700 font-bold text-xl">
+							<span className="text-gray-700 font-bold text-xl truncate">
 								{name}
 							</span>
 
 							<span className="text-orange-300 font-bold text-xl">
-								${finalPrice.toString()}
+								${handlePrice()}
 							</span>
 						</div>
 						<p className="text-gray-500 font-thin line-clamp-2">
@@ -103,8 +95,8 @@ const Crepe = ({ description, name, image, price, id }: CrepeProps) => {
 					</div>
 					<div className="flex justify-center">
 						<SelectButton
-							value={selections}
-							onChange={({ value }) => setSelections(value)}
+							value={value}
+							onChange={({ value }) => setValue(value)}
 							optionLabel="name"
 							options={items}
 							multiple
@@ -123,4 +115,4 @@ const Crepe = ({ description, name, image, price, id }: CrepeProps) => {
 	);
 };
 
-export default Crepe;
+export default Drinks;
