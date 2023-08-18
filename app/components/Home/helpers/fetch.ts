@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "development") {
 	hostname = process.env.LOCAL_URL;
 }
 
-export const getCrepesData = async (): Promise<CrepeProps[]> => {
+export const getCrepes = async (): Promise<CrepeProps[]> => {
 	const res = await fetch(`${hostname}/api/crepes`, { cache: "no-store" });
 
 	if (!res.ok) {
