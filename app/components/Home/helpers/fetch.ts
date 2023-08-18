@@ -1,20 +1,41 @@
-import { ProductProps } from "@/components/app/types/product";
+import {
+	CrepeProps,
+	FrappeProps,
+	DrinkProps,
+} from "@/components/app/types/product";
 
 let hostname = process.env.PRODUCTION_URL;
+
 if (process.env.NODE_ENV === "development") {
-  hostname = process.env.LOCAL_URL;
+	hostname = process.env.LOCAL_URL;
 }
 
-export const getCrepesData = async (): Promise<ProductProps[]> => {
-  const res = await fetch(`${hostname}/api/crepes`, {
-    next: { revalidate: 60 },
-  });
-  return await res.json();
+export const getCrepes = async (): Promise<CrepeProps[]> => {
+	const res = await fetch(`${hostname}/api/crepes`, { cache: "no-store" });
+
+	if (!res.ok) {
+		return [];
+	}
+
+	return await res.json();
 };
 
-export const getFrappesData = async (): Promise<ProductProps[]> => {
-  const res = await fetch(`${hostname}/api/frappes`, {
-    next: { revalidate: 60 },
-  });
-  return await res.json();
+export const getFrappes = async (): Promise<FrappeProps[]> => {
+	const res = await fetch(`${hostname}/api/frappes`, { cache: "no-store" });
+	if (!res.ok) {
+		return [];
+	}
+	return await res.json();
+};
+
+export const getDrinks = async (): Promise<DrinkProps[]> => {
+	const res = await fetch(`${hostname}/api/drinks`, {
+		cache: "no-store",
+	});
+
+	if (!res.ok) {
+		return [];
+	}
+
+	return await res.json();
 };

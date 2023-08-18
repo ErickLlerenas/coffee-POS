@@ -5,15 +5,14 @@ import { Button } from "primereact/button";
 import { useCounter } from "primereact/hooks";
 import { ShoppingCartProductProps } from "@/components/app/types/product";
 import { INITIAL_COUNTER } from "./constants";
-import { handlePrice } from "../../helpers/price";
 
-export default function ShoppingProduct({
+const ShoppingProduct = ({
 	amount,
 	name,
 	image,
 	price,
 	size,
-}: ShoppingCartProductProps) {
+}: ShoppingCartProductProps) => {
 	const { count, increment, decrement } = useCounter(amount, INITIAL_COUNTER);
 
 	return (
@@ -25,7 +24,7 @@ export default function ShoppingProduct({
 						alt={name}
 						width={140}
 						height={80}
-						className="object-cover"
+						className="object-cover rounded-xl"
 					/>
 				</div>
 			</div>
@@ -37,7 +36,7 @@ export default function ShoppingProduct({
 								{name}
 							</span>
 							<span className="text-orange-300 font-bold text-xl">
-								${handlePrice(size, count, price)}
+								${count * price}
 							</span>
 						</div>
 						<p className="text-gray-500 font-thin line-clamp-2">
@@ -52,7 +51,7 @@ export default function ShoppingProduct({
 								className="p-button-outlined p-button-rounded"
 								onClick={decrement}
 							></Button>
-							<span className="font-bold text-2xl text-orange-200">
+							<span className="font-bold text-2xl text-orange-300">
 								{count}
 							</span>
 							<Button
@@ -66,4 +65,6 @@ export default function ShoppingProduct({
 			</div>
 		</div>
 	);
-}
+};
+
+export default ShoppingProduct;

@@ -14,7 +14,7 @@ export default function NavBarItem({ title, icon, href }: NavBarItemProps) {
       className={classNames(
         "flex flex-row items-center w-52 p-2 rounded-lg text-gray-700",
         {
-          "text-orange-300": path === href,
+          "text-orange-400": path === href,
         }
       )}
     >

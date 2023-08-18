@@ -2,10 +2,10 @@
 
 import { useContext } from "react";
 import ShoppingCartProduct from "./ShoppingProduct";
-import ShoppingCartContext from "../../../../context/ShoppingCartContext";
-import { ShoppingCartContextProps } from "../../../../types/product";
+import ShoppingCartContext from "../../context/ShoppingCartContext";
+import { ShoppingCartContextProps } from "../../types/product";
 
-export default function ShoppingCart() {
+const ShoppingCart = () => {
 	const { products } =
 		useContext<ShoppingCartContextProps>(ShoppingCartContext);
 
@@ -19,4 +19,6 @@ export default function ShoppingCart() {
 			</div>
 		</aside>
 	);
-}
+};
+
+export default ShoppingCart;
