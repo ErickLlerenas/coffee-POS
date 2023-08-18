@@ -6,7 +6,7 @@ export const CREPES: CrepeProps[] = [
 		description:
 			"Nutella, lechera, philadelphia o cajeta, nuez, fresas, chocolate encima y azúcar glass.",
 		id: 0,
-		image: "https://images.pexels.com/photos/3225499/pexels-photo-3225499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+		image: "https://lh3.googleusercontent.com/pw/AIL4fc8PRJpdMDGgkieqhCc4BsqyziDmXrkY_XXXYWJMr4d85_alK4hDNkdrTf59bQ0MMiGZ7o-cJSGK2gqZV1jtgifiePC6sMBtu5p0D-8HAJsSOvMnAvPHtdkjjmRW5cKh1RWG4jcmrRYgPD-RuqplSqcS6Q=w1232-h1642-s-no?authuser=0",
 		ingredients: [],
 		name: "Crefresa",
 		price: 65,
